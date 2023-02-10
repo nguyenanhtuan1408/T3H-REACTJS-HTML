@@ -1,0 +1,14 @@
+.box{
+    width: calc(33.33333% - 40px);
+    height: 300px;
+    float: left;
+    border: 1px solid red;
+    padding: 10px 15px 20px 25px; /* khoảng cách lề*/
+    /* padding-top: 10px;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    padding-left: 25px; */
+    margin: 20px; /*khoảng cách các ô */
+    box-sizing: border-box;
+
+}
