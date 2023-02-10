@@ -1,0 +1,47 @@
+h1{
+    color: red;
+}
+
+p{
+    color: blue;
+}
+
+#a1{
+    color: orange;
+}
+
+.abc{
+    color: palevioletred;
+}
+
+.xyz{
+    font-size: 26px;
+}
+
+#a1 span{
+    font-size: 20px;
+}
+
+#b1{
+   /* color: rgb(150,50,50);  red green blue: 0 -> 255 */
+   color: #ff0000;
+   font-size: 30px;
+   font-family: Arial, Helvetica, sans-serif;
+   text-align: center; /* căn chỉnh lề */
+   font-weight: 600; /*cỡ chữu in đậm*/
+   text-transform: none; /*chữ thường,chữ hoa,chữ cái đầu viết hoa:lowercase uppercase capitalize*/
+   text-decoration: none; /*gạch chữ: underline line-through overline*/
+   line-height: 50px; /* độ cao của dòng*/
+   background-color: aqua;
+   background-image: url("...");
+   background-size: cover; /* contain cover */
+   background-repeat: repeat; /*repeat-x repeat-y */
+}
+
+.t3h{
+    color: green;
+}
+
+p{
+    color: black;
+}
