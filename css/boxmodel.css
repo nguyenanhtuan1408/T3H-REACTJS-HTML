@@ -2,7 +2,7 @@
     width: calc(33.33333% - 40px);
     height: 300px;
     float: left;
-    border: 1px solid red;
+    border: 1px solid rgb(244, 238, 238);
     padding: 10px 15px 20px 25px; /* khoảng cách lề*/
     /* padding-top: 10px;
     padding-right: 15px;
