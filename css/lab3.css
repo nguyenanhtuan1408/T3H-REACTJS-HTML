@@ -1,0 +1,12 @@
+body{
+    background-color: gray;
+}
+.jc-sb{
+    justify-content: space-between;
+}
+.border-r{
+    border-right: 1px solid #ccc;
+}
+.bgc-r{
+    background-color: red;
+}

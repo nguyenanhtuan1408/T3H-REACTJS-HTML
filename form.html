@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Demo</title>
+    <link rel="stylesheet" href="./vendors/bootstrap%205.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/form.css"/>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <form action="#" method="post">
+<!--                required: chức năng bắt buộc phải nhập thông tin(tránh trường hợp bỏ trống thông tin)-->
+                <label>Fullname</label>
+                <input type="text" name="fullname" placeholder="Fullname" required/>
+                <br/>
+                <label>Email</label>
+                <input type="email" name="email" placeholder="Email" required/>
+                <br/>
+                <label>password</label>
+                <input type="password" name="password" placeholder="Password" required/>
+                <br/>
+                <label>Telephone</label>
+                <input type="tel" name="telephone" placeholder="Telephone" required/>
+                <br/>
+                <label>Age</label>
+                <input type="number" value="18" min="0" max="100" name="age" placeholder="Age" />
+                <br/>
+                <label>Birthday</label>
+                <input type="date" name="birthday" placeholder="Birthday" />
+                <br/>
+                <label>Gender</label>
+                <label>
+                    <input type="radio" name="gender" value="Nam" />Nam
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Nữ" />Nữ
+                </label>
+                <label>
+                    <input type="radio" name="gender" value="Khác" />Khác
+                </label>
+                <br/>
+                <label>Favorits</label>
+<!--                []: Thêm nhiều lựa chọn (chức năng)-->
+                <label>
+                    <input type="checkbox" name="favorits[]" value="Playgame" />Playgame
+                </label>
+                <label>
+                    <input type="checkbox" name="favorits[]" value="Shoping" />Shoping
+                </label>
+                <label>
+                    <input type="checkbox" name="favorits[]" value="Watching TV" />Watching TV
+                </label>
+                <br/>
+                <label>City</label>
+                <select name="city">
+<!--                    Trong option bắt buộc phải có value-->
+<!--                    optgroup dùng để khoanh vùng-->
+                    <optgroup label="Mien Bac">
+                        <option value="HN">Hà Nội</option>
+                        <option value="HP">Hải Phòng</option>
+                    </optgroup>
+                    <optgroup label="Mien Trung">
+                        <option value="TH">Thanh Hóa</option>
+                        <option value="DN">Đà Nẵng</option>
+                    </optgroup>
+                    <optgroup label="Mien Nam">
+                        <option value="SG">TP.HCM</option>
+                    </optgroup>
+                </select>
+                <br/>
+                <label>More information</label>
+<!--                textarea sử dụng để viết văn bản dài-->
+                <textarea name="more_information" placeholder="More information" cols="40" rows="10"></textarea>
+<!--                submit: gửi dữ liệu lên-->
+                <button type="submit">Submit</button>
+<!--                reset: tải lại trang(f5)-->
+                <button type="reset">Reset</button>
+<!--                button 1 chức năng độc lập với form(dùng nhiều cho javascrit)-->
+                <button type="button">Button</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

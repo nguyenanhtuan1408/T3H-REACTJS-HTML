@@ -1,0 +1,72 @@
+.red{
+    background-color: red;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.orange{
+    background-color: orange;
+}
+/*Demo Desktop->Tablet->Mobile*/
+/*.box{*/
+/*    float: none;*/
+/*    width: 1200px;*/
+/*    margin: 0 auto;*/
+/*}*/
+/*.box-child{*/
+/*    float: left;*/
+/*    width: 25%;*/
+/*}*/
+/*@media screen and (max-width: 992px) {*/
+/*    .box{*/
+/*        width: 900px;*/
+/*    }*/
+/*    .box-child{*/
+/*        width: 50%;*/
+/*    }*/
+/*}*/
+/*@media screen and (max-width: 768px){*/
+/*    .box{*/
+/*        width: 100%;*/
+/*    }*/
+/*    .box-child{*/
+/*        width: 100%;*/
+/*    }*/
+/*}*/
+/*Demo Mobile->Tablet->Desktop*/
+.box{
+    width: 100%;
+    margin: 0 auto;
+    float: none;
+}
+.box-child{
+    float: left;
+    width: 100%;
+}
+@media screen and (min-width: 768px) {
+    .box{
+        width: 750px;
+    }
+    .box-child{
+        width: 50%;
+    }
+}
+@media screen and (min-width: 922px) {
+    .box{
+        width: 990px;
+    }
+    .box-child{
+        width: 33.3333%;
+    }
+}
+@media screen and (min-width: 768px) {
+    .box{
+        width: 1200px;
+    }
+    .box-child{
+        width: 25%;
+    }
+}

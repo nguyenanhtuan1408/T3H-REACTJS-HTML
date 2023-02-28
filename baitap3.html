@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Baitap3</title>
+    <link rel="stylesheet" href="./vendors/bootstrap%205.3/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/baitap3.css">
+</head>
+<body>
+<section>
+    <div class="container">
+        <div class="row w-100 h-100 p-5 rounded-2">
+            <div class="col-6 bg-white p-5">
+                <form>
+                    <h2 class="content-l pb-3">General Infomation</h2>
+                    <div class="mb-3">
+                        <select class="form-select mb-3" name="title" id="floatingSelect" aria-label="Floating label select example">
+                            <option>Title</option>
+                        </select>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name" aria-label="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                            </div>
+                        </div>
+                        <select class="form-select mb-3" name="position" id="floatingSelect" aria-label="Floating label select example">
+                            <option>Position</option>
+                        </select>
+                        <input type="email" name="company" class="form-control mb-3" id="floatingInput" placeholder="Company">
+
+                        <div class="row g-2">
+                            <div class="col">
+                                <input type="text" name="business_arena" class="form-control" placeholder="Business Arena" aria-label="Business Arena">
+                            </div>
+                            <div class="col-md">
+                                <select class="form-select" id="floatingSelectGrid">
+                                    <option>Employees</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-6 form-r p-5">
+                <form>
+                    <h2 class="content-r pb-3">Contact Details</h2>
+                    <div class="mb-3">
+                        <input type="text" name="street" class="form-control mb-3" id="floatingInput" placeholder="Street + Nr">
+                        <input type="text" name="addi" class="form-control mb-3" id="floatingInput" placeholder="Additional Information">
+                        <div class="row g-2">
+                            <div class="col">
+                                <input type="text" name="zip_code" class="form-control" placeholder="Zip Code" aria-label="Business Arena">
+                            </div>
+                            <div class="col-md">
+                                <select class="form-select mb-3" id="floatingSelectGrid">
+                                    <option>Place</option>
+                                </select>
+                            </div>
+                        </div>
+                        <select class="form-select mb-3" name="country" id="floatingSelect" aria-label="Floating label select example">
+                            <option>Country</option>
+                        </select>
+                        <div class="row mb-3">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Code +" aria-label="Code +">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Phone Number" aria-label="Phone Number">
+                            </div>
+                        </div>
+                        <input type="email" name="email" class="form-control mb-3" id="floatingInput" placeholder="Your Email">
+                        <label class="d-flex">
+                            <input type="checkbox" name="chexbox" />&nbsp;
+                            <p class="while mb-1">I do accept Terms and Condtions of your site.</p>
+                        </label>
+                        <div class="col-12 mt-5">
+                            <button class="btn btn-primary" type="submit">Submit form</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+</body>
+</html>

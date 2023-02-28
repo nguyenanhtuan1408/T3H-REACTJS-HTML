@@ -1,0 +1,9 @@
+input[type=text]{
+    background-color: green;
+}
+input[name=password]{
+    background-color: #6c757d;
+}
+input[name=age][type=number]{
+    background-color: #0dcaf0;
+}
