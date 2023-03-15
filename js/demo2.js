@@ -63,35 +63,49 @@
  * Trò chơi kết thúc khi hết 5 lượt hoặc người chơi đoán trúng số may mắn
  */
 
-var r = parseInt(Math.random()*100);
-var slc = 5;
-while (slc >0){
-    slc--;
-    var t = prompt("Vui lòng nhập số may mắn của bạn từ 0->99: ");
-    if (t < 0 ){
-        t = NaN;
-    }else if (t > 99){
-        t = NaN;
+// var r = parseInt(Math.random()*100);
+// var slc = 5;
+// while (slc >0){
+//     slc--;
+//     var t = prompt("Vui lòng nhập số may mắn của bạn từ 0->99: ");
+//     if (t < 0 ){
+//         t = NaN;
+//     }else if (t > 99){
+//         t = NaN;
+//     }
+//     while (isNaN(t)){
+//         var t =prompt("Vui lòng nhập số từ 1 -> 99: ");
+//         t = parseInt(t);
+//         if (t<0){
+//             t = NaN;
+//         }else if (t > 99){
+//             t = NaN;
+//         }
+//     }
+//     if (r == t){
+//         alert("Chúc mừng bạn đã chiến thắng !");
+//         slc = -1;
+//     }else{
+//         alert("Chúc bạn may mắn vào ngày mai.");
+//     }
+// }
+// if (slc == 0){
+//     alert("Rất tiếc, bạn đã hết lượt chơi.");
+// }
+
+var min = 10;
+var sec = 0;
+var t = setInterval(function (){
+    console.log(min+":"+sec);
+    sec--;
+    if (sec < 0){
+        sec = 59;
+        min--;
     }
-    while (isNaN(t)){
-        var t =prompt("Vui lòng nhập số từ 1 -> 99: ");
-        t = parseInt(t);
-        if (t<0){
-            t = NaN;
-        }else if (t > 99){
-            t = NaN;
-        }
+    if (min == 0 && sec == 0){
+        clearInterval(t);
     }
-    if (r == t){
-        alert("Chúc mừng bạn đã chiến thắng !");
-        slc = -1;
-    }else{
-        alert("Chúc bạn may mắn vào ngày mai.");
-    }
-}
-if (slc == 0){
-    alert("Rất tiếc, bạn đã hết lượt chơi.");
-}
+},1);
 
 
 

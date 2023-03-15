@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Object</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        var ob1 = {
+            name: "Nguyen van An",
+            age: 18,
+            tel: "0912639461",
+            run: function (){
+                console.log(this.name+"Running...");
+            }
+        };
+        var ob2 = {
+            name: "Nguyen Anh Tuan",
+            age: 20,
+            tel: "0123456789",
+            run: function (){
+                console.log(this.name+"Running...");
+            }
+        };
+        // console.log(ob1.name);
+        // console.log(ob2.name);
+        // ob1.name = "Dao Van Nguyen";
+        // console.log(ob1.name);
+        // console.log(ob2.name);
+
+        ob1.run();
+        ob2.run();
+
+        var product = {
+            name: "iphone 14 promax",
+            price: 1000
+        };
+
+    </script>
+</body>
+</html>

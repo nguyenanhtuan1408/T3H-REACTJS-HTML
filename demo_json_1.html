@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Json 1</title>
+    <link rel="stylesheet" href="vendors/bootstrap%205.3/css/bootstrap.min.css">
+</head>
+<body>
+  <section>
+      <div class="container">
+          <h1 id="pn">Product name</h1>
+          <h2 id="pp">Price</h2>
+          <h3 id="ct">Danh muc</h3>
+          <ul id="list">
+<!--              <li class="ht1">Hashtag 1</li>-->
+<!--              <li class="ht2">Hashtag 2</li>-->
+<!--              <li class="ht3">Hashtag 3</li>-->
+<!--              <li class="ht4">Hashtag 4</li>-->
+          </ul>
+          <div class="card" style="width: 18rem;">
+              <img src="..." class="card-img-top" id="img" alt="...">
+              <div class="card-body">
+                  <h5 class="card-title" id="title">Card title</h5>
+                  <p class="card-text" id="text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+              </div>
+          </div>
+      </div>
+  </section>
+  <script type="text/javascript">
+    var product = {
+        name: "Iphone 14 promax",
+        price: 1000,
+        category:{
+            name: "Smart phone",
+            sub:{
+                name: "Apple Phone"
+            }
+        },
+        hashtag:[
+            {
+                tag: "phone"
+            },
+            {
+                tag: "apple"
+            },
+            {
+                tag: "smart phone"
+            },
+            {
+                tag: "iphone"
+            }
+        ]
+    };
+    document.getElementById("pn").innerText = product.name;
+    document.getElementById("pp").innerText = product.price;
+    document.getElementById("ct").innerText = product.category.name;
+
+    var ht = product.hashtag; //array
+    for (i = 0; i < ht.length; i++){
+        var li = "<li>"+ht[i].tag+"</li>";
+        var ul = document.getElementById("list");
+        ul.innerHTML += li;
+    };
+
+    /*var p = {
+        id:1,
+        title:"iPhone 9",
+        description:"An apple mobile which is nothing like apple",
+        price:549,
+        discountPercentage:12.96,
+        rating:4.69,
+        stock:94,
+        brand:"Apple",
+        category:"smartphones",
+        thumbnail:"https://i.dummyjson.com/data/products/1/thumbnail.jpg",
+        images:[
+            "https://i.dummyjson.com/data/products/1/1.jpg",
+            "https://i.dummyjson.com/data/products/1/2.jpg",
+            "https://i.dummyjson.com/data/products/1/3.jpg",
+            "https://i.dummyjson.com/data/products/1/4.jpg",
+            "https://i.dummyjson.com/data/products/1/thumbnail.jpg"
+        ]
+    }*/
+
+    //AJAX
+    var xhttp = new XMLHttpRequest(); // Shipper
+    xhttp.onload = function (){ // Callback function
+        // Những việc sẽ làm khi nhận được đc dữ liệu trả về
+        var rs = this.responseText;
+        console.log(rs);
+        var p = JSON.parse(rs);
+        document.getElementById("title").innerText = p.title;
+        document.getElementById("text").innerText = p.description;
+        document.getElementById("img").src = p.thumbnail;
+    }
+    xhttp.open("GET","https://dummyjson.com/products/1");
+    xhttp.send();
+
+
+  </script>
+</body>
+</html>

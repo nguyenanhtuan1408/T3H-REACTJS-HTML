@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demo Json 2</title>
+    <link rel="stylesheet" href="vendors/bootstrap%205.3/css/bootstrap.min.css">
+</head>
+<body>
+<section>
+    <div class="container">
+        <h1>Các sản phẩm liên quan</h1>
+        <div id="list" class="row">
+
+        </div>
+    </div>
+</section>
+
+<script type="text/javascript">
+    var xhttp = new XMLHttpRequest();
+    xhttp.onload = function (){
+        var rs = this.responseText;
+        var data = JSON.parse(rs);
+        // console.log(data);
+        var product = data.products;
+        for (var i = 0; i<product.length; i++){
+            var p = product[i];
+            var thumb = p.thumbnail;
+            var title = p.title;
+            var text = p.description;
+            var li = `<div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="${thumb}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">${title}</h5>
+                        <p class="card-text">${text}</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>`
+            document.getElementById("list").innerHTML += li;
+        }
+    }
+    xhttp.open("GET","https://dummyjson.com/products?limit=10");
+    xhttp.send();
+
+
+
+
+</script>
+</body>
+</html>
