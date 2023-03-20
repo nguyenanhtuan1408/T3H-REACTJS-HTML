@@ -20,7 +20,7 @@
     xhttp.onload = function (){
         var rs = this.responseText;
         var data = JSON.parse(rs);
-        // console.log(data);
+        console.log(data);
         var product = data.products;
         for (var i = 0; i<product.length; i++){
             var p = product[i];

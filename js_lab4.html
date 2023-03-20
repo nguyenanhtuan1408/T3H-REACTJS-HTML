@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS lab 4</title>
+    <link rel="stylesheet" href="vendors/bootstrap%205.3/css/bootstrap.min.css"/>;
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css"/>;
+    <link rel="stylesheet" href="css/js_lab4.css">
+</head>
+<body>
+    <section class="color-w">
+        <div class="container">
+            <div class="title d-flex jc-sb">
+                <div class="title-left d-flex">
+                    <i class="bi bi-geo-alt-fill mt-2 fs-4 ml-30"></i>
+                    <h1 id="name" class="ml-30">&nbsp; Seattle</h1>
+                </div>
+                <div class="title-right">
+                    <i class="bi bi-three-dots fs-1"></i>
+                </div>
+            </div>
+            <div class="conten row mt-3 jc-sb">
+                <div class="ct-left col-4 ">
+                    <div class="fs-4 ml-90">
+                        <p>September 15</p>
+                        <p>Monday</p>
+                    </div>
+                    <div class="d-flex">
+                        <div class="">
+                            <i class="bi bi-thermometer-half fs-80">&nbsp;</i>
+                        </div>
+                        <div class="ml--20">
+                            <h1 class="fs-100">25<sup>o</sup></h1>
+                            <p class="fs-4">Feels like 23<sup>o</sup> </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="ct-center col-4 mt--50">
+                    <img src="images/sun.png" class="ml-50" alt="" style="width: 20rem">
+                    <p class="fs-4 text-center">Cloudy</p>
+                </div>
+                <div class="ct-right col-4 pl-200 fs-4">
+                    <div class="d-flex">
+                        <i class="bi bi-sunrise"></i>
+                        <p>&nbsp;sunrise 7:00</p>
+                    </div>
+                    <div class="d-flex">
+                        <i class="bi bi-sunset"></i>
+                        <p>&nbsp;sunset 19:20</p>
+                    </div>
+                    <div class="d-flex">
+                        <i class="bi bi-droplet"></i>
+                        <p>&nbsp;60%</p>
+                    </div>
+                    <div class="d-flex">
+                        <i class="bi bi-wind"></i>
+                        <p>&nbsp;10 km/h</p>
+                    </div>
+                    <div class="d-flex">
+                        <i class="bi bi-compass"></i>
+                        <p>&nbsp;North-East</p>
+                    </div>
+                    <div class="d-flex">
+                        <i class="bi bi-arrow-up"></i>
+                        <p>&nbsp;1023.0 mb</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer bg-footer">
+                <div class="row">
+                    <div class="col pt-3 ml-20">
+                        <div class="card bg-footer border-0" style="width: 7rem;">
+                            <img src="images/hot.png" class="card-img-top " alt="...">
+                            <div class="card-body mt-2">
+                                <h3 class="card-text">+25<sup>o</sup></h3>
+                                <p class="card-text">Sunday</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col pt-3">
+                        <div class="card bg-footer border-0" style="width: 8rem;">
+                            <img src="images/clouds.png" class="card-img-top mb-2" alt="...">
+                            <div class="card-body mt-4">
+                                <h3 class="card-text">+19<sup>o</sup></h3>
+                                <p class="card-text">Monday</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col pt-3">
+                        <div class="card bg-footer border-0" style="width: 8rem;">
+                            <img src="images/rain-g.png" class="card-img-top " alt="...">
+                            <div class="card-body">
+                                <h3 class="card-text">+14<sup>o</sup></h3>
+                                <p class="card-text">Tuesday</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col pt-3">
+                        <div class="card bg-footer border-0" style="width: 8rem;">
+                            <img src="images/thunderstorm.png" class="card-img-top " alt="...">
+                            <div class="card-body">
+                                <h3 class="card-text">+7<sup>o</sup></h3>
+                                <p class="card-text">Wednesday</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col pt-3">
+                        <div class="card bg-footer border-0" style="width: 8rem;">
+                            <img src="images/snow.png" class="card-img-top " alt="...">
+                            <div class="card-body mt-3">
+                                <h3 class="card-text">-3<sup>o</sup></h3>
+                                <p class="card-text">Thursday</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col pt-3">
+                        <div class="card bg-footer border-0" style="width: 8rem;">
+                            <img src="images/snow-g9.png" class="card-img-top " alt="...">
+                            <div class="card-body mt-2">
+                                <h3 class="card-text">0<sup>o</sup></h3>
+                                <p class="card-text">Friday</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col pt-3">
+                        <div class="card bg-footer border-0" style="width: 9rem;">
+                            <img src="images/fog.png" class="card-img-top " alt="...">
+                            <div class="card-body mt-4">
+                                <h3 class="card-text">+5<sup>o</sup></h3>
+                                <p class="card-text">Saturday</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var xhttp = new XMLHttpRequest();
+        xhttp.onload = function (){
+            var rs = this.responseText;
+            var data = JSON.parse(rs);
+            console.log(data);
+            document.getElementById("name").innerText = data.name;
+            var weather = data.weathers;
+            for (var i = 0; i<weather.length; i++){
+                var w = weather[i];
+
+            }
+        }
+        xhttp.open("GET","https://api.openweathermap.org/data/2.5/weather?q=Hanoi,vietnam&appid=09a71427c59d38d6a34f89b47d75975c&units=metric");
+        xhttp.send();
+    </script>
+</body>
+</html>
