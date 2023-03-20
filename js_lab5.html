@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./vendors/bootstrap 5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/js_lab5.css">
+</head>
+<body>
+    <section>
+        <div class="container header">
+            <div id="list-temp" class="row">
+                
+            </div>
+        </div>
+    </section>
+
+
+    <script type="text/javascript">
+        var xhttp = new XMLHttpRequest();
+        xhttp.onload = function(){
+            var rs = this.responseText;
+            var data = JSON.parse(rs);
+            var list = data.list;
+            for(var i=0; i<list.length; i++){
+                var a = document.getElementById("list-temp");
+                var dt = list[i].dt_txt;
+                var temp = list[i].main.temp;
+                var description = list[i].weather[0].description;
+                var div = `<div class="col-3 mt-2 mb-2">
+                    <div class="content">
+                        <p>${dt}</p>
+                        <p class="temp">${temp}°C</p>
+                        <img src="http://openweathermap.org/img/wn/04n@2x.png" alt="">
+                        <p>${description}</p>
+                    </div>
+                </div>`
+                a.innerHTML += div;
+            }
+            console.log(list)
+        }
+        xhttp.open("GET","https://api.openweathermap.org/data/2.5/forecast?q=Hanoi,vietnam&appid=09a71427c59d38d6a34f89b47d75975c&units=metric");
+        xhttp.send();
+    </script>
+</body>
+</html>
