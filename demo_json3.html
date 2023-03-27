@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vendors/bootstrap 5.3/css/bootstrap.css">
+</head>
+<body>
+    <section>
+        <div class="container">
+            <select onchange="change(this)" class="form-control" id="myselect">
+                <option value="hanoi">Hà Nội</option>
+                <option value="saigon">TP HCM</option>
+                <option value="london">London</option>
+                <option value="new york">New York</option>
+            </select>
+            <select id="c-k" class="form-control">
+                <option value="C">C</option>
+                <option value="K">K</option>
+            </select>
+            <h1 id="city">Hà Nội, Việt Nam</h1>
+            <h2><span id="temp">29</span><sup>o</sup><span id="span-unit">C</span></h2>
+            <p id="desc">Hôm nay trời nhiều mây</p>
+        </div>
+    </section>
+
+    <script type="text/javascript">
+        var xhttp = new XMLHttpRequest();
+        xhttp.onload = function(){
+            var rs = this.responseText;
+            data = JSON.parse(rs);
+            document.getElementById("city").innerText = data.name +", "+data.sys.country;
+            document.getElementById("temp").innerText = data.main.temp;
+            document.getElementById("desc").innerText = data.weather[0].description;   
+        }
+        xhttp.open("GET","https://api.openweathermap.org/data/2.5/weather?q=Hanoi,vietnam&appid=09a71427c59d38d6a34f89b47d75975c&units=metric");
+        xhttp.send();
+        
+        function change(){
+            var x = document.getElementById("myselect").value;
+            var units = document.getElementById("c-k").value;
+            document.getElementById("span-unit").innerText = units;
+            var metric = ""; 
+            if(units == 'C'){
+                metric = "unit=metric";
+            }
+                var xhttp = new XMLHttpRequest();
+                    xhttp.onload = function(){
+                        var rs = this.responseText;
+                        data = JSON.parse(rs);
+                        document.getElementById("city").innerText = data.name +", "+data.sys.country;
+                        document.getElementById("temp").innerText = data.main.temp;
+                        document.getElementById("desc").innerText = data.weather[0].description;   
+                }
+                xhttp.open("GET",`https://api.openweathermap.org/data/2.5/weather?q=${x},vietnam&appid=09a71427c59d38d6a34f89b47d75975c&${metric}`);
+                xhttp.send();
+            }
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+body{
+    background-color: #25698f;
+}
+.grey {
+    background-color: #447083;
+}
+.white{
+    color: white;
+}
+.ml-3{
+    margin-left: 3px;
+}
+.jc-sb{
+    justify-content: space-between;
+}
+.ff-rw{
+    flex-flow: row wrap;
+}

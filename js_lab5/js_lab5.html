@@ -10,6 +10,16 @@
 </head>
 <body>
     <section>
+        <select class="form-control mt-3 mb-3" name="" id="mySelect" onchange="loadWeather(this)">
+            <option value="hanoi">Hà Nội</option>
+            <option value="saigon">TP HCM</option>
+            <option value="london">London</option>
+            <option value="new york">New York</option>
+        </select>
+        <select class="form-control" name="" id="units" onchange="loadWeather(this)">
+            <option value="C">C</option>
+            <option value="K">K</option>
+        </select>
         <div class="container header">
             <div id="list-temp" class="row">
                 
@@ -19,6 +29,10 @@
 
 
     <script type="text/javascript">
+        function loadWeather(){
+            var city = document.getElementById("mySelect").value;
+            
+        }
         var xhttp = new XMLHttpRequest();
         xhttp.onload = function(){
             var rs = this.responseText;
@@ -39,10 +53,12 @@
                 </div>`
                 a.innerHTML += div;
             }
-            console.log(list)
+            console.log(list)    
         }
-        xhttp.open("GET","https://api.openweathermap.org/data/2.5/forecast?q=Hanoi,vietnam&appid=09a71427c59d38d6a34f89b47d75975c&units=metric");
+        xhttp.open("GET",`https://api.openweathermap.org/data/2.5/forecast?q=Hanoi,Hanoi&appid=09a71427c59d38d6a34f89b47d75975c&units=metric`);
         xhttp.send();
+        
+
     </script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="vendors/bootstrap5.3/css/bootstrap.css"/>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <button class="btn btn-primary" onmouseleave="mouseLeave()" onmouseenter="mouseEnter()" onclick="clickMe()"><i>Click me</i></button>
+            <div class="row">
+                <div class="col-3">
+                    <input type="text" onkeyup="searchUp(this)"  name="search" id="search" placeholder="Search.."/>
+                    <input type="text" onkeyup="searchUp(this)" name="search" id="search2" placeholder="Search22.."/>
+                    <select name="select" onchange="change(this)" class="form-control">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript">
+        function change(x){
+            var v = x.value;
+            console.log("Change..."+v);    
+        }
+        var ip = document.getElementById("search");
+        var ip2 = document.getElementById("search2");
+        function searchPress(){
+            var v = ip.value;
+            console.log("Search keypress..."+v);
+        }
+        function searchUp(x){
+            //var ip = document.getElementById(x);
+            var v = x.value;
+            console.log("Search keyup..."+v);
+        }
+        function search(){
+            var v = ip.value;
+           console.log("Seach keydown..."+v);     
+        }
+        function clickMe(){
+            var t = prompt("Tên của bạn là gì?");
+            alert("Xin chào "+t);
+        }
+        function mouseEnter(){
+            console.log("Mouse enter...");
+        }
+        function mouseLeave(){
+            console.log("Mouse Leave..");
+        }
+    </script>
+</body>
+</html>
