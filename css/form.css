@@ -5,5 +5,5 @@ input[name=password]{
     background-color: #6c757d;
 }
 input[name=age][type=number]{
-    background-color: #0dcaf0;
+    background-color: #505050;
 }

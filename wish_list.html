@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wish List</title>
+    <link rel="stylesheet" href="vendors/bootstrap 5.3/css/bootstrap.min.css">;
+    
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="no-products" style="display: none;">
+          <div class="col-6">
+              <div class="alert alert-primary" role="alert">
+                  Không có sản phẩm nào trong giỏ hàng
+                </div>
+          </div>
+        </div>
+        <div class="row" id="has-product">
+            <div class="col-9">
+                <table class="table">
+                    <thead>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>Subtotal</th>
+                    </thead>
+                    <tbody id="list">
+                        
+                    </tbody>
+                </table>
+            </div>
+            <div class="col">
+                <h2>Cart totals</h2>
+                <h2 id="total"></h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <script type="text/javascript">
+        reloadHtml();
+        function reloadHtml(){
+            var cart = localStorage.getItem("cart");
+            if(cart == null){
+            cart = [];
+            }else{
+            cart = JSON.parse(cart);
+            }
+            if(cart.length == 0){
+                document.getElementById("no-products").style.display = "block";
+                document.getElementById("has-products").style.display = "none";
+            }
+            var html = ``;
+            var total = 0;
+            for(var i=0;i<cart.length;i++){
+                var img = cart[i].thumbnail;
+                var name = cart[i].title;
+                var price = cart[i].price;
+                var buy_qty = cart[i].buy_qty;
+                var id = cart[i].id;
+                total += price*buy_qty;
+                var stock = cart[i].stock;
+                html += `<tr>       
+                                    <td><img width="150" class="img-thumbnail" src="${img}"/></td>
+                                    <td>${name}</td>
+                                    <td>${price}$</td>
+                                    <td>${buy_qty}</td>
+                                    <td>${price*buy_qty}$</td>
+                                    <td><span onclick="removeItem(${id})" class="text-danger">X</span></td>
+                                </tr>`;                                
+            }
+            document.getElementById("list").innerHTML = html;
+            document.getElementById("total").innerText = total;
+            document.getElementById("remove").innerHTML = remove;
+    }
+    </script>
+</body>
+</html>
